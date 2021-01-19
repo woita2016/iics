@@ -1,0 +1,147 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ZghDBr3rp3yD7ty-gt-9009897-2021-01-19T15:38:37.831Z::pd.xml</types1:EntryId>
+      <types1:Name>proc_demo_basic_auth</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>wwojcik@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-01-19T15:38:38Z</types1:CreationDate>
+      <types1:ModifiedBy>wwojcik@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-01-19T15:39:27Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>wwojcik@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-01-19T15:39:40Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.proc_demo_basic_auth/proc_demo_basic_auth.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="proc_demo_basic_auth"
+                  name="proc_demo_basic_auth"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="curr_from" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="curr_to" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="value" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="converted_value" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="error_message" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowedGroups>
+                     <group>Demo</group>
+                  </allowedGroups>
+                  <allowedUsers>
+                     <user>wwojcik@informatica.com</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kk45ck7z" targetId="kk45ck8i"/>
+               </start>
+               <eventContainer id="kk45ck8i">
+                  <service id="kk45ck7y">
+                     <title>get exchange rate</title>
+                     <serviceName>ac-demo:getRate</serviceName>
+                     <serviceGUID>9S9iHiO09mOjC6HWRoeB4H</serviceGUID>
+                     <serviceInput>
+                        <parameter name="from" source="field" updatable="true">input.curr_from</parameter>
+                        <parameter name="to" source="field" updatable="true">input.curr_to</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="kk45ck8k">
+                     <assignment id="kk45ck8s">
+                        <title>assign ok</title>
+                        <operation source="formula" to="output.converted_value">
+                           <expression language="XQuery">$input.value * util:parseXML($output.rate )</expression>
+                        </operation>
+                        <operation source="constant" to="output.error_message">'no error'</operation>
+                     </assignment>
+                     <link id="kk45ck8l" targetId="kk45ck8i" type="containerLink"/>
+                  </flow>
+                  <flow id="kk45ck8n">
+                     <assignment id="kk45ck8z">
+                        <title>assign Nok</title>
+                        <operation source="constant" to="output.error_message">{$output.faultInfo}</operation>
+                     </assignment>
+                     <link id="kk45ck8o" targetId="kk45ck8i" type="containerLink"/>
+                  </flow>
+                  <link id="kk45ck8j" targetId="kk45ck8k" type="containerLink"/>
+                  <link id="kk45ck8r" targetId="c"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kk45ck8d" interrupting="true">
+                        <link id="kk45ck8m" targetId="kk45ck8n" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>61bbb8b0-8d5b-4ce6-9e6d-51bb66fcfcb4</ns1:Id>
+               <ns1:Name>teste Nok</ns1:Name>
+               <ns1:CreatedBy>wwojcik@informatica.com</ns1:CreatedBy>
+               <ns1:CreationDate>2021-01-19T15:38:38Z</ns1:CreationDate>
+               <ns1:ModifiedBy>wwojcik@informatica.com</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2021-01-19T15:38:38Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "curr_from": "USD",
+	 "curr_to": "BRL",
+	 "value": "alguma coisa"
+}</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>2c30baf6-6e84-4f97-a667-067c1b5fefc9</ns1:Id>
+               <ns1:Name>teste ok</ns1:Name>
+               <ns1:CreatedBy>wwojcik@informatica.com</ns1:CreatedBy>
+               <ns1:CreationDate>2021-01-19T15:38:38Z</ns1:CreationDate>
+               <ns1:ModifiedBy>wwojcik@informatica.com</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2021-01-19T15:38:38Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "curr_from": "BRL",
+	 "curr_to": "PLN",
+	 "value": "1000"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>1XUlEyBHKnjcK6XhVI4RSM</types1:GUID>
+      <types1:DisplayName>proc_demo_basic_auth</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-19T16:16:16.879Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

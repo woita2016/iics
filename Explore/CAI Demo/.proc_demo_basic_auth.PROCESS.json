@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "1XUlEyBHKnjcK6XhVI4RSM",
+    "name" : "proc_demo_basic_auth",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ZghDBr3rp3yD7ty-gt-9009897-2021-01-19T15:38:37.831Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "9S9iHiO09mOjC6HWRoeB4H",
+    "name" : "ac-demo",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "beN7Y3AxtPk7HNC-gt-6992398-2021-01-19T15:22:36.028Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI Demo"
+  } ]
+}
