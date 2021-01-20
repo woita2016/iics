@@ -1,0 +1,46 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Vf4VQT53nQciSrZ-gt-4383772-2021-01-20T18:26:40.762Z::conn.xml</types1:EntryId>
+      <types1:Name>ac-demo-moeda</types1:Name>
+      <types1:ParentFlowIds>AQxgjATO9pH8sVY-gt-362485-2021-01-20T18:36:41.432Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:BRW1PF0Q7CS9</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>wwojcik@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-01-20T18:26:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>wwojcik@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-01-20T18:26:51Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/ac-demo-moeda/ac-demo-moeda.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="ac-demo-moeda"
+                     label="ac-demo-moeda"
+                     name="ac-demo-moeda">
+            <description/>
+            <tags>.agent:BRW1PF0Q7CS9</tags>
+            <agent>BRW1PF0Q7CS9</agent>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/sc_demo_moeda/sc_demo_moeda_svcDef.xml"
+                               guid="9JKPxwNQISme8POdybYD4O"
+                               name="sc_demo_moeda"
+                               supportsConnectionTest="false"
+                               uuid="42a62ef8-cb65-457d-a641-7b01a59d9726">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>j5XwVQiRAW6iYTnT5G77ss</types1:GUID>
+      <types1:DisplayName>ac-demo-moeda</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-20T18:56:37.161Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

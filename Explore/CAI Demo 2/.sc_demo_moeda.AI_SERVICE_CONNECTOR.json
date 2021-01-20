@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9JKPxwNQISme8POdybYD4O",
+    "name" : "sc_demo_moeda",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "PhvgeDXJqEhynzY-gt-124219-2021-01-20T18:21:19.664Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}
