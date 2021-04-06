@@ -1,0 +1,107 @@
+{
+  "objectInfo" : {
+    "id" : "gIuzYE5FLcHfSpW7WoqL0H",
+    "name" : "m_MSSQL_SYNAPSE_customer",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010X4O1700000000002E"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "eFiW36fmPykbmPjMf86lUh",
+    "name" : "cls_standardize_state",
+    "type" : "CLEANSE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "eFiW36fmPykbmPjMf86lUh"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/webinar_cdh_azure/DataQuality"
+  }, {
+    "id" : "8oU2k3mdTO6lcdQHqPo6qT",
+    "name" : "webinar_cdh_azure_sql_dwh",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010X4O0B00000000002D"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "9Lu4RMjgOHWgM1kFipQZIa",
+    "name" : "webinar_cdh_azure_mssql",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010X4O0B000000000022"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "aCQn6VYCiyLiH2WTt2YYM2",
+    "name" : "vrf_customer_address",
+    "type" : "VERIFIER",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "aCQn6VYCiyLiH2WTt2YYM2"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Verifies the address and add geo-coding information",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/webinar_cdh_azure/DataQuality"
+  } ]
+}
