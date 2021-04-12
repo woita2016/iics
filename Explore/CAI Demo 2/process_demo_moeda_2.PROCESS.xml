@@ -1,0 +1,107 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>FiQ99WvbeGoQwg7-gt-255765-2021-01-20T21:31:16.501Z::pd.xml</types1:EntryId>
+      <types1:Name>process_demo_moeda_2</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:BRW1PF0Q7CS9,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>wwojcik@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-01-20T21:31:17Z</types1:CreationDate>
+      <types1:ModifiedBy>wwojcik@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-04-12T15:29:39Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>wwojcik@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-04-12T15:29:50Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.process_demo_moeda_2/process_demo_moeda_2.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="process_demo_moeda_2"
+                  name="process_demo_moeda_2"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:BRW1PF0Q7CS9,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="MoedaIn" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="MoedaOut" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="Valor" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="ValorConvertido" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <targetLocation>BRW1PF0Q7CS9</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kk5rd4wf" targetId="kk5rd4we"/>
+               </start>
+               <service id="kk5rd4we">
+                  <title>get Exchange Rate</title>
+                  <serviceName>ac-demo-moeda:getExRate</serviceName>
+                  <serviceGUID>j5XwVQiRAW6iYTnT5G77ss</serviceGUID>
+                  <serviceInput>
+                     <parameter name="from" source="field" updatable="true">input.MoedaIn</parameter>
+                     <parameter name="to" source="field" updatable="true">input.MoedaOut</parameter>
+                  </serviceInput>
+                  <link id="kk5rd4x1" targetId="kk5rd4x0"/>
+               </service>
+               <assignment id="kk5rd4x0">
+                  <title>Calcular Valor</title>
+                  <operation source="formula" to="output.ValorConvertido">
+                     <expression language="XQuery">$output.currExRate</expression>
+                  </operation>
+                  <link id="kk5rd4x2" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>e891f329-24c6-4d22-814c-fc3f6d118d56</ns1:Id>
+               <ns1:Name>teste Feliz</ns1:Name>
+               <ns1:CreatedBy>wwojcik@informatica.com</ns1:CreatedBy>
+               <ns1:CreationDate>2021-01-20T21:31:17Z</ns1:CreationDate>
+               <ns1:ModifiedBy>wwojcik@informatica.com</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2021-01-20T21:31:17Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "MoedaIn": "BRL",
+	 "MoedaOut": "USD",
+	 "Valor": "1000"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>eHqCP1T2p84hrzNKefm8kX</types1:GUID>
+      <types1:DisplayName>process_demo_moeda_2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-12T15:31:22.626Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

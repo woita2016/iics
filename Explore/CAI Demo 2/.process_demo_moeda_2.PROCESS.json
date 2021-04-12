@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "eHqCP1T2p84hrzNKefm8kX",
+    "name" : "process_demo_moeda_2",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "FiQ99WvbeGoQwg7-gt-255765-2021-01-20T21:31:16.501Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "j5XwVQiRAW6iYTnT5G77ss",
+    "name" : "ac-demo-moeda",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Vf4VQT53nQciSrZ-gt-4383772-2021-01-20T18:26:40.762Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI Demo 2"
+  } ]
+}
